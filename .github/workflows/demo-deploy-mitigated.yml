@@ -20,5 +20,6 @@ jobs:
         id: execute
         env:
           VERSION: ${{ github.event.inputs.version }}
+          SERVER_PASSWORD: ${{ secrets.SERVER_PASSWORD }}
         run: |
           ./deploy.sh "$VERSION"
