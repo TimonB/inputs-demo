@@ -18,5 +18,7 @@ jobs:
 
       - name: Execute deployment script
         id: execute
+        env:
+          SERVER_PASSWORD: ${{ secrets.SERVER_PASSWORD }}
         run: |
           ./deploy.sh ${{ github.event.inputs.version }}
